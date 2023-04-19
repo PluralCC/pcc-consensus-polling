@@ -1,5 +1,5 @@
-# **Plugin Name** Plugin
+# **Plugin Name** Plural Polis Discourse
 
 **Plugin Summary**
 
-For more information, please see: **url to meta topic**
+TODO

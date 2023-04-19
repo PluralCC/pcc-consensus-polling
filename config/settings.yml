@@ -1,4 +1,7 @@
 plugins:
-  plugin_name_enabled:
+  plural_polis_discourse_enabled:
     default: true
     client: true
+  plural_polis_site_id:
+    default: ""
+    client: ""

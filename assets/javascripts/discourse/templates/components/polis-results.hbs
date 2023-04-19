@@ -1,0 +1,51 @@
+{{#if hasPolis}}
+  {{#unless this.isLoadingInitial}}
+    <div id="polis-results">
+      {{#if this.nextComment}}
+        {{#if this.isLoginBannerVisible}}
+          <div class="comment-text">
+            You need to be logged in to vote
+          </div>
+        {{/if}}
+        {{#unless this.isLoginBannerVisible}}
+          <div class="statements-count">
+            {{statementPosition
+              this.nextComment.total
+              this.nextComment.remaining
+            }}/{{this.nextComment.total}}
+          </div>
+          <div class="comment-text">
+            {{this.nextComment.txt}}
+          </div>
+          <div class="vote-group">
+            <div
+              class="vote-action vote-yes"
+              role="button"
+              onclick={{action "voteComment" this.nextComment "YES"}}
+            >
+              YES
+            </div>
+            <div
+              class="vote-action vote-no"
+              role="button"
+              onclick={{action "voteComment" this.nextComment "NO"}}
+            >
+              NO
+            </div>
+            <div
+              class="vote-action vote-na"
+              role="button"
+              onclick={{action "voteComment" this.nextComment "N/A"}}
+            >
+              N/A
+            </div>
+          </div>
+        {{/unless}}
+      {{/if}}
+      {{#unless this.nextComment}}
+        <div class="comment-text">You already voted on all the available
+          statements</div>
+      {{/unless}}
+    </div>
+  {{/unless}}
+{{/if}}

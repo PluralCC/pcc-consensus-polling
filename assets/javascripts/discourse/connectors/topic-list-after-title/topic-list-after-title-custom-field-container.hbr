@@ -1,0 +1,6 @@
+{{#if context.hasPolisValue}}
+  <span>|</span>
+  <a href='{{context.topic.lastUnreadUrl}}' class='{{context.hasPolisName}}' data-topic-id='{{context.topic.id}}'>
+    <span>Polis</span>
+  </a>
+{{/if}}

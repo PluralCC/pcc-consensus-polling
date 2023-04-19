@@ -1,10 +1,17 @@
 {
-  "name": "discourse-plugin-name",
+  "name": "plural-polis-discourse",
   "version": "0.0.1",
-  "repository": "TODO",
+  "repository": "PluralCC",
   "author": "Discourse",
-  "license": "MIT",
+  "license": "AGPL-3.0",
   "devDependencies": {
-    "eslint-config-discourse": "^3.1.0"
+    "eslint-config-discourse": "^3.1.0",
+    "prettier": "^2.8.7"
+  },
+  "scripts": {
+    "lint:fix": "yarn run lint:fix:js && yarn run lint:fix:ruby && yarn run lint:fix:ember",
+    "lint:fix:js": "prettier --write . && eslint --fix --ext .js,.js.es6 --no-error-on-unmatched-pattern {test,assets,admin/assets}/javascripts",
+    "lint:fix:ruby": "stree write **/**.rb",
+    "lint:fix:ember": "ember-template-lint --no-error-on-unmatched-pattern --fix assets/javascripts"
   }
 }

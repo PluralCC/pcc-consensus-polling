@@ -1,0 +1,40 @@
+{{#if this.siteSettings.plural_polis_site_id}}
+  {{#if this.model.has_polis}}
+    <div>Contribute a statement to the Polis consensus poll or participate in
+      the Discourse discussion below it?</div>
+    <div
+      class="polis"
+      data-page_id={{this.model.id}}
+      data-site_id={{this.siteSettings.plural_polis_site_id}}
+      data-auth_opt_allow_3rdparty="true"
+      data-auth_opt_tw="false"
+      data-auth_opt_fb="false"
+      data-xid={{getXid this.currentUser}}
+      data-x_name={{this.currentUser.username}}
+      data-x_profile_image_url={{replace
+        this.currentUser.avatar_template
+        "{size}"
+        "90"
+      }}
+      data-ucv="false"
+      data-ucw="true"
+      data-ucsv="false"
+      data-auth_needed_to_vote="true"
+      data-auth_needed_to_write="true"
+      data-ucsh="false"
+      data-ucsd="false"
+      data-ucsf="false"
+      data-ucst="false"
+      data-subscribe_type="0"
+      data-padding="0"
+      data-border="none"
+      data-show_share="false"
+      style="max-height: 200px; overflow-y: hidden;"
+      scrolling="no"
+    >
+    </div>
+    {{! template-lint-disable no-forbidden-elements }}
+    <script async src="https://pol.is/embed.js">
+    </script>
+  {{/if}}
+{{/if}}
