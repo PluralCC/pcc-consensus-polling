@@ -3,7 +3,6 @@ import { action } from "@ember/object";
 import { isEmpty } from "@ember/utils";
 
 export default class PolisResults extends Component {
-
   didInsertElement() {
     this._super(...arguments);
 
@@ -20,9 +19,9 @@ export default class PolisResults extends Component {
 
   @action
   insertPolisIframe() {
-    if (this.siteSettings.plural_polis_site_id && this.model.has_polis) {
+    if (this.siteSettings.plural_polis_site_id && this.hasPolis) {
       const post1 = document.getElementById('post_1');
-      const pageId = this.model.id;
+      const pageId = this.pageId;
       const siteId = this.siteSettings.plural_polis_site_id;
       const xid = this.getXid(this.currentUser);
 
@@ -68,7 +67,6 @@ export default class PolisResults extends Component {
       script.src = 'https://pol.is/embed.js';
       script.async = true;
       post1.appendChild(script);
-
     }
   }
 
