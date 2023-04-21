@@ -1,38 +1,6 @@
-#polis-results {
-  margin-top: 50px;
-  border: 1px solid var(--primary-high-or-secondary-low);
-  padding: 20px;
-
-  .statements-count {
-    text-align: end;
-  }
-  .comment-text {
-    text-align: center;
-    padding: 50px 0;
-  }
-  .vote-group {
-    display: flex;
-    .vote-action {
-      flex: 1;
-      text-align: center;
-      padding: 10px;
-      border: 1px solid var(--primary-high-or-secondary-low);
-      border-radius: 5px;
-      margin: 5px;
-      cursor: pointer;
-    }
-
-    .vote-yes {
-      color: #000;
-      background-color: rgb(46, 204, 113);
-    }
-    .vote-no {
-      color: #000;
-      background-color: rgb(231, 76, 60);
-    }
-    .vote-na {
-      color: #000;
-      background-color: rgb(230, 230, 230);
-    }
-  }
+.polis-statement {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-weight: 500;
 }
