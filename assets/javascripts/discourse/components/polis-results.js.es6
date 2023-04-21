@@ -57,7 +57,6 @@ export default class PolisResults extends Component {
       polisDiv.style.overflowX = 'hidden';
       polisDiv.setAttribute('scrolling', 'no');
       // TODO: see final results
-      // TODO: not vote if user is not logged in
 
       const statementDiv = document.createElement('div');
       statementDiv.textContent = 'Contribute a statement to the Polis consensus poll or participate in the Discourse discussion below it?';
