@@ -20,8 +20,8 @@ export default class PolisResults extends Component {
 
   @action
   insertPolisIframe() {
-    const post1 = document.getElementById('post_1');
     if (this.siteSettings.plural_polis_site_id && this.model.has_polis) {
+      const post1 = document.getElementById('post_1');
       const pageId = this.model.id;
       const siteId = this.siteSettings.plural_polis_site_id;
       const xid = this.getXid(this.currentUser);
@@ -40,8 +40,7 @@ export default class PolisResults extends Component {
         polisDiv.dataset.x_name = username;
         polisDiv.dataset.x_profile_image_url = avatar;
       }
-
-      polisDiv.dataset.ucv = false;
+      // polisDiv.dataset.ucv = false;
       polisDiv.dataset.ucw = true;
       polisDiv.dataset.ucsv = false;
       polisDiv.dataset.auth_needed_to_vote = true;
@@ -55,7 +54,10 @@ export default class PolisResults extends Component {
       polisDiv.dataset.border = 'none';
       polisDiv.dataset.show_share = false;
       polisDiv.style.overflowY = 'hidden';
+      polisDiv.style.overflowX = 'hidden';
       polisDiv.setAttribute('scrolling', 'no');
+      // TODO: see final results
+      // TODO: not vote if user is not logged in
 
       const statementDiv = document.createElement('div');
       statementDiv.textContent = 'Contribute a statement to the Polis consensus poll or participate in the Discourse discussion below it?';
