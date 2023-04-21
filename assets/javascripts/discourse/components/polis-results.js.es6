@@ -4,6 +4,7 @@ import { action } from "@ember/object";
 import { isEmpty } from "@ember/utils";
 import { ajax } from "discourse/lib/ajax";
 
+// DEPRECATED
 export default class PolisResults extends Component {
   @tracked conversationId = null;
   @tracked isLoginBannerVisible = false;
