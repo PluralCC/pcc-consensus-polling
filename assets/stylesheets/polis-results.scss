@@ -1,6 +1,23 @@
 .polis-statement {
   text-align: center;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
   font-weight: 500;
+}
+
+.polis-container {
+  display: flex;
+  align-items: center;
+}
+
+.polis-statement {
+  flex-grow: 1;
+  margin-right: 10px;
+}
+
+.polis-button {
+  white-space: nowrap;
+  align-self: flex-end;
+  background-color: var(--primary-low);
+  color: var(--primary);
 }

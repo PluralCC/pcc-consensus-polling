@@ -64,7 +64,24 @@ export default class PolisResults extends Component {
       statementDiv.textContent =
         "Contribute a statement to the Polis consensus poll or participate in the Discourse discussion below it?";
       statementDiv.classList.add("polis-statement");
-      post1.appendChild(statementDiv);
+
+      const button = document.createElement("button");
+      button.textContent = "Hide Polis";
+      button.classList.add("btn");
+      button.classList.add("btn-default");
+      button.classList.add("polis-button");
+      button.addEventListener("click", () => {
+        polisDiv.style.display =
+          polisDiv.style.display === "none" ? "block" : "none";
+        button.textContent =
+          polisDiv.style.display === "none" ? "Show Polis" : "Hide Polis";
+      });
+
+      const containerDiv = document.createElement("div");
+      containerDiv.classList.add("polis-container");
+      containerDiv.appendChild(statementDiv);
+      containerDiv.appendChild(button);
+      post1.appendChild(containerDiv);
       post1.appendChild(polisDiv);
 
       const script = document.createElement("script");
