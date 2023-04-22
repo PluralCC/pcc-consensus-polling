@@ -1,8 +1,5 @@
 {{#if this.siteSettings.plural_polis_site_id}}
   {{#if this.model.has_polis}}
-    {{polis-results 
-        pageId=this.model.id
-        hasPolis=this.model.has_polis
-    }}
+    {{polis-results pageId=this.model.id hasPolis=this.model.has_polis}}
   {{/if}}
 {{/if}}

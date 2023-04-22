@@ -12,6 +12,7 @@ export default class PolisResults extends Component {
         clearInterval(interval);
         this.insertPolisIframe();
       } else {
+        // eslint-disable-next-line no-console
         console.log("Element with ID 'targetId' not found");
       }
     }, 300);
