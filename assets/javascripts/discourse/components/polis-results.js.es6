@@ -20,13 +20,13 @@ export default class PolisResults extends Component {
   @action
   insertPolisIframe() {
     if (this.siteSettings.plural_polis_site_id && this.hasPolis) {
-      const post1 = document.getElementById('post_1');
+      const post1 = document.getElementById("post_1");
       const pageId = this.pageId;
       const siteId = this.siteSettings.plural_polis_site_id;
       const xid = this.getXid(this.currentUser);
 
-      const polisDiv = document.createElement('div');
-      polisDiv.classList.add('polis');
+      const polisDiv = document.createElement("div");
+      polisDiv.classList.add("polis");
       polisDiv.dataset.page_id = pageId;
       polisDiv.dataset.site_id = siteId;
       polisDiv.dataset.auth_opt_allow_3rdparty = true;
@@ -34,7 +34,9 @@ export default class PolisResults extends Component {
       polisDiv.dataset.auth_opt_fb = false;
       if (xid) {
         const username = this.currentUser.username;
-        const avatar =  window.location.origin + this.currentUser.avatar_template.replace('{size}', '90');
+        const avatar =
+          window.location.origin +
+          this.currentUser.avatar_template.replace("{size}", "90");
         polisDiv.dataset.xid = xid;
         polisDiv.dataset.x_name = username;
         polisDiv.dataset.x_profile_image_url = avatar;
@@ -50,21 +52,39 @@ export default class PolisResults extends Component {
       polisDiv.dataset.ucst = false;
       polisDiv.dataset.subscribe_type = 0;
       polisDiv.dataset.padding = 0;
-      polisDiv.dataset.border = 'none';
+      polisDiv.dataset.border = "none";
       polisDiv.dataset.show_share = false;
-      polisDiv.style.overflowY = 'hidden';
-      polisDiv.style.overflowX = 'hidden';
-      polisDiv.setAttribute('scrolling', 'no');
+      polisDiv.style.overflowY = "hidden";
+      polisDiv.style.overflowX = "hidden";
+      polisDiv.setAttribute("scrolling", "no");
       // TODO: see final results
 
-      const statementDiv = document.createElement('div');
-      statementDiv.textContent = 'Contribute a statement to the Polis consensus poll or participate in the Discourse discussion below it?';
-      statementDiv.classList.add('polis-statement');
-      post1.appendChild(statementDiv);
+      const statementDiv = document.createElement("div");
+      statementDiv.textContent =
+        "Contribute a statement to the Polis consensus poll or participate in the Discourse discussion below it?";
+      statementDiv.classList.add("polis-statement");
+
+      const button = document.createElement("button");
+      button.textContent = "Hide Polis";
+      button.classList.add("btn");
+      button.classList.add("btn-default");
+      button.classList.add("polis-button");
+      button.addEventListener("click", () => {
+        polisDiv.style.display =
+          polisDiv.style.display === "none" ? "block" : "none";
+        button.textContent =
+          polisDiv.style.display === "none" ? "Show Polis" : "Hide Polis";
+      });
+
+      const containerDiv = document.createElement("div");
+      containerDiv.classList.add("polis-container");
+      containerDiv.appendChild(statementDiv);
+      containerDiv.appendChild(button);
+      post1.appendChild(containerDiv);
       post1.appendChild(polisDiv);
 
-      const script = document.createElement('script');
-      script.src = 'https://pol.is/embed.js';
+      const script = document.createElement("script");
+      script.src = "https://pol.is/embed.js";
       script.async = true;
       post1.appendChild(script);
     }
