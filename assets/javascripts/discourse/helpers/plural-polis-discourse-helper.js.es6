@@ -25,3 +25,7 @@ registerHelper("isLenghtGreaterThanZero", function (value) {
 registerHelper("statementPosition", function ([value1, value2]) {
   return Number(value1) - Number(value2) + 1;
 });
+
+registerHelper('includesTopic', function([str]) {
+  return str.includes('topic');
+});

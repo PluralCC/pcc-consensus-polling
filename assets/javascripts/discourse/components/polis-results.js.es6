@@ -58,6 +58,12 @@ export default class PolisResults extends Component {
       polisDiv.style.overflowY = "hidden";
       polisDiv.style.overflowX = "hidden";
       polisDiv.setAttribute("scrolling", "no");
+
+      if (!this.currentUser) {
+        polisDiv.style.opacity = 0.4; // Set opacity to 0.7
+        polisDiv.style.pointerEvents = 'none'; // Disable clicking on the iframe
+        polisDiv.style.backgroundColor = '#fff'; // Greyed-out background color
+      }
       // TODO: see final results
 
       const statementDiv = document.createElement("div");
