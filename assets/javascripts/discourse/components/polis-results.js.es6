@@ -58,15 +58,23 @@ export default class PolisResults extends Component {
       polisDiv.style.overflowY = "hidden";
       polisDiv.style.overflowX = "hidden";
       polisDiv.setAttribute("scrolling", "no");
-      // TODO: see final results
 
       const statementDiv = document.createElement("div");
-      statementDiv.textContent =
-        "Contribute a statement to the Polis consensus poll or participate in the Discourse discussion below it?";
+      statementDiv.textContent = "Pol.is";
       statementDiv.classList.add("polis-statement");
 
+      if (!this.currentUser) {
+        polisDiv.style.opacity = 0.4;
+        polisDiv.style.pointerEvents = "none"; // Disable clicking on the iframe
+        statementDiv.textContent =
+          "Log in to participate in the Pol.is conversation";
+        statementDiv.classList.add("polis-statement-sign-in");
+      }
+      // TODO: see final results
+
       const button = document.createElement("button");
-      button.textContent = "Hide Polis";
+      button.textContent = "Show Polis";
+      polisDiv.style.display = "none";
       button.classList.add("btn");
       button.classList.add("btn-default");
       button.classList.add("polis-button");
