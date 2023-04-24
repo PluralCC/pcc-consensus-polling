@@ -67,7 +67,7 @@ export default class PolisResults extends Component {
         polisDiv.style.opacity = 0.4;
         polisDiv.style.pointerEvents = "none"; // Disable clicking on the iframe
         statementDiv.textContent =
-          "Sign in to participate in the Pol.is conversation";
+          "Log in to participate in the Pol.is conversation";
         statementDiv.classList.add("polis-statement-sign-in");
       }
       // TODO: see final results
