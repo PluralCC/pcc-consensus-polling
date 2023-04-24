@@ -73,8 +73,7 @@ export default class PolisResults extends Component {
       // TODO: see final results
 
       const button = document.createElement("button");
-      button.textContent = "Show Polis";
-      polisDiv.style.display = "none";
+      button.textContent = "Hide Polis";
       button.classList.add("btn");
       button.classList.add("btn-default");
       button.classList.add("polis-button");
