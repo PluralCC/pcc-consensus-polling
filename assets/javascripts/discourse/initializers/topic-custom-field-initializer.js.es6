@@ -33,7 +33,8 @@ export default {
             let props = {
               hasPolisField,
               hasPolisValue: model.get(hasPolisField),
-              isCreatingTopic: model.draftKey === "new_topic" || model.post?.post_number === 1,
+              isCreatingTopic:
+                model.draftKey === "new_topic" || model.post?.post_number === 1,
             };
             component.setProperties(
               Object.assign(props, fieldInputTypes(fieldType))
@@ -60,7 +61,8 @@ export default {
             let props = {
               hasPolisField,
               hasPolisValue: model.get(hasPolisField),
-              isCreatingTopic: model.post?.post_number === 1,
+              isCreatingTopic:
+                model.draftKey === "new_topic" || model.post?.post_number === 1,
             };
             component.setProperties(
               Object.assign(props, fieldInputTypes(fieldType))
@@ -95,7 +97,8 @@ export default {
               showField:
                 !controller.get("editingTopic") &&
                 isDefined(model.get(hasPolisField)),
-              isCreatingTopic: model.post?.post_number === 1,
+              isCreatingTopic:
+                model.draftKey === "new_topic" || model.post?.post_number === 1,
             });
 
             controller.addObserver("editingTopic", () => {
